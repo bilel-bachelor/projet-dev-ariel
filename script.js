@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const addCardModal = document.getElementById('addCardModal');
   const closeBtn = document.querySelector('.close-btn');
   const addCardForm = document.getElementById('addCardForm');
-  const todoColumn = document.querySelector('[data-status="todo"]')
+  const todoColumn = document.querySelector('[data-status="todo"]');
   // Éventuellement, on écoute les événements
   addCardBtn.addEventListener('click', () => {
     addCardModal.style.display = "block";
