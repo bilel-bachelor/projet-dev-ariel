@@ -49,6 +49,30 @@
       <button id="sortByPriorityBtn">Trier par priorité</button>
     </div>
 
+    <!-- Modale d'ajout de carte -->
+    <div id="addCardModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Nouvelle Tâche</h2>
+        <form id="addCardForm">
+          <label for="cardTitle">Titre:</label>
+          <input type="text" id="cardTitle" name="cardTitle" required />
+          
+          <label for="cardDesc">Description:</label>
+          <textarea id="cardDesc" name="cardDesc"></textarea>
+          
+          <label for="cardPriority">Priorité:</label>
+          <select id="cardPriority" name="cardPriority">
+            <option value="low">Basse</option>
+            <option value="medium" selected>Moyenne</option>
+            <option value="high">Haute</option>
+          </select>
+          
+          <button type="submit">Ajouter</button>
+        </form>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
