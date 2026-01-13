@@ -1,8 +1,8 @@
 console.log("Kanban JS loaded...");
 
-// Exemple éventuel de structure
 window.addEventListener("DOMContentLoaded", () => {
-  // Ici, on récupère les éléments du DOM
+
+  // Récupération des éléments
   const addCardBtn = document.getElementById('addCardBtn');
   const searchInput = document.getElementById('searchInput');
   const sortByPriorityBtn = document.getElementById('sortByPriorityBtn');
@@ -10,8 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const addCardModal = document.getElementById('addCardModal');
   const closeBtn = document.querySelector('.close-btn');
   const addCardForm = document.getElementById('addCardForm');
-  const todoColumn = document.querySelector('[data-status="todo"]');
-
+  const todoColumn = document.querySelector('[data-status="todo"]')
   // Éventuellement, on écoute les événements
   addCardBtn.addEventListener('click', () => {
     addCardModal.style.display = "block";
@@ -56,7 +55,44 @@ window.addEventListener("DOMContentLoaded", () => {
     // ...
   });
 
+  // ORDRE DES PRIORITÉS
+  const priorityOrder = {
+    high: 1,
+    medium: 2,
+    low: 3
+  };
+ 
+
+  // TRI PAR PRIORITÉ
   sortByPriorityBtn.addEventListener('click', () => {
-    // ...
+    console.log("Tri par priorité déclenché");
+
+    const columns = document.querySelectorAll('.column');
+
+    columns.forEach(column => {
+      const cards = Array.from(column.querySelectorAll('.card'));
+
+      cards.sort((a, b) => {
+        return (
+          priorityOrder[a.dataset.priority] -
+          priorityOrder[b.dataset.priority]
+        );
+      });
+
+      cards.forEach(card => {
+        column.appendChild(card);
+      });
+    });
   });
+
+  
+  addCardBtn.addEventListener('click', () => {
+    
+  });
+
+  
+  searchInput.addEventListener('input', () => {
+    
+  });
+
 });
